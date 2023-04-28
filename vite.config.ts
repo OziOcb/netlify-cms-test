@@ -8,10 +8,10 @@ export default defineConfig({
     viteStaticCopy({
       targets: [
         {
-          src: 'public/admin/index.html',
-          dest: 'admin/',
+          src: 'src/cms.html',
+          dest: 'cms/',
           rename: 'index.html',
-          transform: content => content.toString().replace('#{BRANCH}', env.VUE_APP_BUILD_BRANCH.replace('refs/heads/', ''))
+          // transform: content => content.toString().replace('#{BRANCH}', env.VUE_APP_BUILD_BRANCH.replace('refs/heads/', ''))
         }
       ]
     }),

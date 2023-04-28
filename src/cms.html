@@ -6,9 +6,30 @@
   <meta name="robots" content="noindex" />
   <title>Content Manager</title>
   <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+  <script>
+    window.CMS_MANUAL_INIT = true
+  </script>
 </head>
 <body>
   <!-- Include the script that builds the page and powers Decap CMS -->
   <script src="https://unpkg.com/netlify-cms@^2.0.0/dist/netlify-cms.js"></script>
+
+  <script>
+    const { CMS, initCMS: init } = window
+
+    // prettier-ignore
+    console.log("-\n--\n CMS \n >", CMS, "\n--\n-") // REMOVE_ME: remove when done!
+    CMS.registerMediaLibrary({
+      name: 'disabled',
+      init: () => ({ show: () => undefined, enableStandalone: () => false }),
+    });
+    init({
+      config: {
+        backend: {
+          branch: "#{BRANCH}"
+        },
+      },
+    })
+  </script>
 </body>
 </html>

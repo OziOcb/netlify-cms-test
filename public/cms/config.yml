@@ -1,5 +1,6 @@
 backend:
   name: git-gateway
+  repo: OziOcb/netlify-cms-test
   branch: main
 
 publish_mode: editorial_workflow
