@@ -11,7 +11,7 @@ export default defineConfig({
           src: 'public/admin/index.html',
           dest: 'admin/',
           rename: 'index.html',
-          // transform: content => content.toString().replace('#{BRANCH}', env.VUE_APP_BUILD_BRANCH.replace('refs/heads/', ''))
+          transform: content => content.toString().replace('#{BRANCH}', env.VUE_APP_BUILD_BRANCH.replace('refs/heads/', ''))
         }
       ]
     }),
